@@ -2,18 +2,19 @@ SPENDWISE – Smart Student Budget Analyzer
 
 About the Project
 
-SPENDWISE is a beginner-friendly Java project designed to help students manage their monthly budget and track their expenses.
+SPENDWISE is a beginner-friendly Java application designed to help students manage their monthly budget, track expenses, and monitor their savings goals.
 
 Features
 
-- Set a monthly budget.
+- Set and validate monthly budget.
 - Add multiple expenses.
 - Categorize expenses into Essentials, Entertainment, and Learning.
 - Calculate total spending and remaining budget.
 - Identify the highest expense.
 - Display budget utilization percentage.
 - Show a warning when spending exceeds 75% of the budget.
-- Generate a monthly spending report.
+- Check whether the user's savings goal has been achieved.
+- Calculate the savings shortfall if the goal is not achieved.
 
 Concepts Used
 
