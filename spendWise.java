@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class spendWise {
+class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -19,37 +19,41 @@ class spendWise {
         int highestAmount = 0;
         int percentage;
 
+        int savingsGoal;
+
         String expenseName;
-        String highestExpense = "No expenses recorded";
+        String highestExpense = "";
 
         char choice = 'Y';
-
         boolean categoryValid;
-        boolean warningShown = false;
 
-        System.out.println("SPENDWISE");
-        System.out.println("SMART STUDENT BUDGET ANALYZER");
-        System.out.println();
+        System.out.println("");
+        System.out.println("             SPENDWISE");
+        System.out.println("     SMART STUDENT BUDGET ANALYZER");
+        System.out.println("-------------------------------------------");
 
         System.out.print("Enter your monthly budget: ");
         budget = sc.nextInt();
 
         while (budget <= 0) {
-            System.out.println("Please enter a valid budget.");
-            System.out.print("Enter your monthly budget: ");
+            System.out.println("Enter a valid budget.");
             budget = sc.nextInt();
         }
 
-        sc.nextLine();
+        System.out.print("Enter your savings goal: ");
+        savingsGoal = sc.nextInt();
 
-        remainingBudget = budget;
+        sc.nextLine();
 
         System.out.println("Budget successfully set to Rs. " + budget);
 
+        remainingBudget = budget;
+
         while (choice == 'Y' || choice == 'y') {
 
-            System.out.println();
-            System.out.println("ADD EXPENSE");
+            System.out.println("");
+            System.out.println("             ADD EXPENSE");
+            System.out.println("");
 
             System.out.print("Enter expense name: ");
             expenseName = sc.nextLine();
@@ -57,10 +61,10 @@ class spendWise {
             System.out.print("Enter expense amount: ");
             expenseAmount = sc.nextInt();
 
-            while (expenseAmount <= 0) {
-                System.out.println("Please enter a valid amount.");
-                System.out.print("Enter expense amount: ");
-                expenseAmount = sc.nextInt();
+            if (expenseAmount <= 0) {
+                System.out.println("Invalid expense amount!");
+                sc.nextLine();
+                continue;
             }
 
             System.out.println("Select expense category:");
@@ -72,34 +76,33 @@ class spendWise {
             categoryChoice = sc.nextInt();
 
             categoryValid = true;
-			
-			switch (categoryChoice) {
 
-    case 1:
-        essentials = essentials + expenseAmount;
-        break;
+            switch (categoryChoice) {
 
-    case 2:
-        entertainment = entertainment + expenseAmount;
-        break;
+                case 1:
+                    essentials = essentials + expenseAmount;
+                    break;
 
-    case 3:
-        learning = learning + expenseAmount;
-        break;
+                case 2:
+                    entertainment = entertainment + expenseAmount;
+                    break;
 
-    default:
-        System.out.println("Invalid category!");
-        categoryValid = false;
-        break;
-}
+                case 3:
+                    learning = learning + expenseAmount;
+                    break;
 
-            
+                default:
+                    System.out.println("Invalid category!");
+                    categoryValid = false;
+            }
 
             if (categoryValid == false) {
-                System.out.println("Please enter the expense again.");
+                System.out.println("Please enter expense again.");
                 sc.nextLine();
                 continue;
             }
+
+            System.out.println("Expense added successfully!");
 
             totalSpent = totalSpent + expenseAmount;
             remainingBudget = budget - totalSpent;
@@ -110,18 +113,15 @@ class spendWise {
                 highestExpense = expenseName;
             }
 
-            System.out.println("Expense added successfully!");
-
-            if (totalSpent * 100 > budget * 75 && warningShown == false) {
+            if (totalSpent * 100 > budget * 75) {
                 System.out.println("WARNING: You have used more than 75%");
                 System.out.println("of your monthly budget!");
-                warningShown = true;
             }
 
             System.out.println("Total Spent: Rs. " + totalSpent);
             System.out.println("Remaining Budget: Rs. " + remainingBudget);
 
-            System.out.println();
+            System.out.println("");
 
             System.out.print("Add another expense? (Y/N): ");
             choice = sc.next().charAt(0);
@@ -131,23 +131,26 @@ class spendWise {
 
         percentage = (totalSpent * 100) / budget;
 
-        System.out.println();
-        System.out.println("MONTHLY REPORT");
+        System.out.println("");
+        System.out.println("           MONTHLY REPORT");
+        System.out.println("");
 
         System.out.println("Monthly Budget       : Rs. " + budget);
         System.out.println("Total Expenses       : " + expenseCount);
         System.out.println("Total Amount Spent   : Rs. " + totalSpent);
         System.out.println("Remaining Budget     : Rs. " + remainingBudget);
 
-        System.out.println();
-        System.out.println("CATEGORY-WISE SPENDING");
+        System.out.println("");
+        System.out.println("         CATEGORY-WISE SPENDING");
+        System.out.println("");
 
         System.out.println("Essentials           : Rs. " + essentials);
         System.out.println("Entertainment        : Rs. " + entertainment);
         System.out.println("Learning             : Rs. " + learning);
 
-        System.out.println();
-        System.out.println("SPENDING INSIGHTS");
+        System.out.println("");
+        System.out.println("          SPENDING INSIGHTS");
+        System.out.println("");
 
         System.out.println("Highest Expense      : " + highestExpense);
         System.out.println("Highest Amount       : Rs. " + highestAmount);
@@ -160,8 +163,22 @@ class spendWise {
             System.out.println("Status               : OVER BUDGET");
         }
 
-        System.out.println();
-        System.out.println("THANK YOU FOR USING SPENDWISE");
+        System.out.println("");
+        System.out.println("          SAVINGS GOAL TRACKER");
+        System.out.println("");
+        System.out.println("Your Savings Goal: Rs. " + savingsGoal);
+        System.out.println("Available Money: Rs. " + remainingBudget);
+
+        if (remainingBudget >= savingsGoal) {
+            System.out.println("Congratulations! Savings goal achieved.");
+        } else {
+            System.out.println("You need to save more money.");
+            System.out.println("Shortfall: Rs. " + (savingsGoal - remainingBudget));
+        }
+
+        System.out.println("");
+        System.out.println("       THANK YOU FOR USING SPENDWISE");
+        System.out.println("");
 
         sc.close();
     }
