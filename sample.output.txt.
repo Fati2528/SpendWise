@@ -1,0 +1,69 @@
+SPENDWISE
+SMART STUDENT BUDGET ANALYZER
+
+Enter your monthly budget: 10000
+Budget successfully set to Rs. 10000
+
+ADD EXPENSE
+Enter expense name: Notebook
+Enter expense amount: 500
+Select expense category:
+
+1. Essentials
+2. Entertainment
+3. Learning
+   Enter category choice: 1
+   Expense added successfully!
+   Total Spent: Rs. 500
+   Remaining Budget: Rs. 9500
+
+Add another expense? (Y/N): Y
+
+ADD EXPENSE
+Enter expense name: Movie
+Enter expense amount: 1000
+Select expense category:
+
+1. Essentials
+2. Entertainment
+3. Learning
+   Enter category choice: 2
+   Expense added successfully!
+   Total Spent: Rs. 1500
+   Remaining Budget: Rs. 8500
+
+Add another expense? (Y/N): Y
+
+ADD EXPENSE
+Enter expense name: Java Course
+Enter expense amount: 2000
+Select expense category:
+
+1. Essentials
+2. Entertainment
+3. Learning
+   Enter category choice: 3
+   Expense added successfully!
+   Total Spent: Rs. 3500
+   Remaining Budget: Rs. 6500
+
+Add another expense? (Y/N): N
+
+MONTHLY REPORT
+Monthly Budget       : Rs. 10000
+Total Expenses       : 3
+Total Amount Spent   : Rs. 3500
+Remaining Budget     : Rs. 6500
+
+CATEGORY-WISE SPENDING
+Essentials           : Rs. 500
+Entertainment        : Rs. 1000
+Learning             : Rs. 2000
+
+SPENDING INSIGHTS
+Highest Expense      : Java Course
+Highest Amount       : Rs. 2000
+Budget Utilized      : 35%
+Status               : WITHIN BUDGET
+
+THANK YOU FOR USING SPENDWISE
