@@ -1,58 +1,22 @@
 SPENDWISE – Test Cases
 
-1. Valid Monthly Budget
-
-- Input: 10000
-- Expected Result: Budget successfully set to Rs. 10000.
-
-2. Invalid Monthly Budget
-
-- Input: 0 or a negative number
-- Expected Result: Display an error message and ask for a valid budget.
-
-3. Valid Expense Entry
-
-- Input: Notebook, Rs. 500, Category 1
-- Expected Result: Expense added successfully and Essentials total updated.
-
-4. Category Selection
-
-- Input: Category 1, 2 or 3
-- Expected Result:
-  - 1: Essentials
-  - 2: Entertainment
-  - 3: Learning
-
-5. Invalid Category
-
-- Input: Category 4
-- Expected Result: Display invalid category message and ask the user to enter the expense again.
-
-6. Invalid Expense Amount
-
-- Input: 0 or a negative amount
-- Expected Result: Ask the user to enter a valid amount.
-
-7. Budget Warning
-
-- Input: Total spending greater than 75% of the budget
-- Expected Result: Display a warning message.
-
-8. Highest Expense
-
-- Input: Multiple expenses with different amounts
-- Expected Result: Display the name and amount of the highest expense.
-
-9. Over Budget
-
-- Input: Total spending greater than the monthly budget
-- Expected Result: Display OVER BUDGET.
-
-10. Monthly Report
-
-- Input: Multiple valid expenses
-- Expected Result: Display total expenses, total spending, remaining budget, category-wise spending and budget utilization.
+Test Case| Input / Condition              |     Expected Result
+ Monthly budget = 10000                   |     Budget is accepted
+ Monthly budget = 0 or negative           |     Invalid budget message
+ Valid expense amount = 500               |     Expense is added
+ Expense amount = 0 or negative           |     Invalid expense message
+ Category = 1                             |     Essentials total is updated
+ Category = 2                             |     Entertainment total is updated
+ Category = 3                             |     Learning total is updated
+ Invalid category = 4                     |     Invalid category message
+ Spending exceeds 75% of budget           |     Warning is displayed
+ Multiple expenses                        |     Total spending is calculated
+ Different expense amounts                |     Highest expense is identified
+ Total spending within budget             |     WITHIN BUDGET status
+ Total spending exceeds budget            |     OVER BUDGET status
+ Remaining budget >= savings goal         |     Savings goal achieved message
+ Remaining budget < savings goal          |     Savings shortfall is displayed
 
 Conclusion
 
-SPENDWISE uses basic Java concepts to help students track expenses and analyze their monthly budget.
+SPENDWISE uses basic Java concepts to help students track expenses, analyze monthly spending, and monitor their savings goals.
