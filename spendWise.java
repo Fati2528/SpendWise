@@ -1,4 +1,4 @@
-import java.util.Scanner;
+port java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
@@ -30,7 +30,7 @@ class Main {
         System.out.println("");
         System.out.println("             SPENDWISE");
         System.out.println("     SMART STUDENT BUDGET ANALYZER");
-        System.out.println("-------------------------------------------");
+        System.out.println("");
 
         System.out.print("Enter your monthly budget: ");
         budget = sc.nextInt();
@@ -157,15 +157,20 @@ class Main {
 
         System.out.println("Budget Utilized      : " + percentage + "%");
 
-        if (totalSpent <= budget) {
+        if (totalSpent < budget) {
             System.out.println("Status               : WITHIN BUDGET");
-        } else {
+        }
+		 else if (totalSpent==budget) {
+			 System.out.println("Status                :Budget Fully Used");
+		 }
+		else {
             System.out.println("Status               : OVER BUDGET");
         }
 
         System.out.println("");
         System.out.println("          SAVINGS GOAL TRACKER");
         System.out.println("");
+
         System.out.println("Your Savings Goal: Rs. " + savingsGoal);
         System.out.println("Available Money: Rs. " + remainingBudget);
 
